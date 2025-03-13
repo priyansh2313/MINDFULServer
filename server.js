@@ -3,6 +3,16 @@ const http = require("http");
 const { Server } = require("socket.io");
 const cors = require("cors");
 
+
+const cors = require("cors");
+
+app.use(cors({
+  origin: "https://mindfulv2.netlify.app/", // Your Netlify URL
+  methods: ["GET", "POST"],
+  credentials: true
+}));
+
+
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
